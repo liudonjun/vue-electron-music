@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <titleVue />
+    <Hearder />
     <Layout />
-    <FootLayout />
+    <Footer />
   </div>
 </template>
 
 <script>
-import titleVue from './components/title/title.vue'
-import FootLayout from './components/bottom.vue'
-import Layout from './components/layout.vue'
+import Hearder from './components/hearder/hearder'
+import Footer from './components/footer/footer'
+import Layout from './components/layout/layout'
 export default {
   name: 'music-demo',
   components: {
-    titleVue,
-    FootLayout,
+    Hearder,
+    Footer,
     Layout,
   },
 }

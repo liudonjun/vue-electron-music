@@ -8,6 +8,8 @@ import './assets/iconfont/iconfont.css'
 import './assets/iconfont/iconfont.js'
 import { Carousel, CarouselItem } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+// 导入全局样式
+import "./styles/index.scss";
 
 Vue.component(Carousel.name, Carousel)
 Vue.component(CarouselItem.name, CarouselItem)

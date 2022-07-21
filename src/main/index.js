@@ -33,26 +33,6 @@ function createWindow() {
   })
 }
 
-const options = {
-  frame: false,
-  x: 0,
-  y: 0,
-  fullscreenable: false,
-  minimizable: false,
-  maximizable: false,
-  transparent: true,
-  alwaysOnTop: true,
-  skipTaskbar: true, // 任务栏中不显示窗口面板
-  closable: false,
-}
-// const winURL1 =
-//   process.env.NODE_ENV === 'development'
-//     ? `http://localhost:9080/#desktop-lyric`
-//     : `file://${__dirname}/index.html#desktop-lyric`
-
-// let lyricWindow = new BrowserWindow(options)
-// lyricWindow.loadURL(winURL1)
-
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
@@ -66,15 +46,15 @@ app.on('activate', () => {
     createWindow()
   }
 })
-ipcMain.on('min', (e) => mainWindow.minimize())
-ipcMain.on('max', (e) => {
+ipcMain.on('window-min', (e) => mainWindow.minimize())
+ipcMain.on('window-max', (e) => {
   if (mainWindow.isMaximized()) {
     mainWindow.unmaximize()
   } else {
     mainWindow.maximize()
   }
 })
-ipcMain.on('close', (e) => mainWindow.close())
+ipcMain.on('window-close', (e) => mainWindow.close())
 /**
  * Auto Updater
  *

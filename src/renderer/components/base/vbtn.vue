@@ -1,14 +1,18 @@
 <template>
-  <div class="titlebtn" v-bind:style="style" v-on:click="click" v-html="html" />
+  <div class="titlebtn" :style="style" @click.stop="click" v-html="html" />
 </template>
 
 <script>
-const { ipcRenderer: ipc } = require('electron')
 const style = {
   min: {
     // backgroundColor: "green",
     right: '100px',
     html: "<i class='iconfont icon-zuixiaohua'></i>",
+  },
+  plus: {
+    // backgroundColor: "yellow",
+    right: '60px',
+    html: "<i class='iconfont icon-zuidahua'></i>",
   },
   max: {
     // backgroundColor: "yellow",
@@ -32,8 +36,8 @@ export default {
     },
   },
   methods: {
-    click: function () {
-      ipc.send(this.type)
+    click() {
+      this.$emit('click')
     },
   },
 }
