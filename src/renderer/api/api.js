@@ -1,3 +1,3 @@
 import { getAction } from './manage'
 
-export const getHome = (params) => getAction('/api/home', params)
+export const getBannerList = (params) => getAction('/api/bannerList', params)

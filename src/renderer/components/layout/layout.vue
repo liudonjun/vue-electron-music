@@ -14,7 +14,9 @@
       </ul>
     </div>
     <div class="right">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -27,9 +29,13 @@ export default {
       leftOption,
     }
   },
+  created() {
+    console.log(this.$store)
+  },
   methods: {
     changeType(data, index) {
       this.checkedIndex = index
+      this.$router.push({ name: data.route })
     },
   },
 }
@@ -42,11 +48,11 @@ export default {
   .left {
     height: 100%;
     width: 220px;
-    background: #fcfcfc;
+    background: #f4f4f4;
     margin: 0 auto;
     // padding: 40px;
     box-sizing: border-box;
-    border-right: 1px solid #ccc;
+    // border-right: 1px solid #ccc;
     ul > li {
       width: 220px;
       height: 40px;
@@ -66,6 +72,7 @@ export default {
     }
   }
   .right {
+    background: #fcfcfc;
     flex: 1;
   }
 }

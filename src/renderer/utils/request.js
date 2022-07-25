@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const request = axios.create({
   timeout: 3000 * 10,
-  baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:88' : 'http://ldjun.cn:88',
+  baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:90' : 'http://ldjun.cn:90',
   headers: {
     'Content-Type': 'application/json;charset=UTF-8',
   },
